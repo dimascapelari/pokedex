@@ -10,6 +10,7 @@
             <div class="pokemon">
               <transition>
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
+                <!-- <img src="@/assets/imgs/pokemons/001.png" v-show="exibir" /> -->
               </transition>
             </div>
           </div>
@@ -95,11 +96,23 @@ body {
 }
 
 .v-enter-active {
-  transition: opacity 2s;
+  transition: opacity 1s;
 }
 
 .v-enter-to {
   opacity: 1;
+}
+
+.v-leave-from {
+  opacity: 1;
+}
+
+.v-leave-active {
+  transition: opacity 0.5s;
+}
+
+.v-leave-to {
+  opacity: 0;
 }
 
 .pokedex {
