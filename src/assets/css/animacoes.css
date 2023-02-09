@@ -76,3 +76,50 @@
 .zoom-leave-to {
   transform: scale(0);
 }
+
+/* Flip Exemplo 1*/
+/*
+.flip-enter-active {
+  animation: flipEntrada 2s;
+}
+
+.flip-leave-active {
+  animation: flipSaida 2s;
+}
+
+@keyframes flipEntrada {
+  from {
+    transform: rotateY(-80deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flipSaida {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(80deg);
+  }
+}
+*/
+
+/* Flip Exemplo 2 */
+.flip-enter-active {
+  animation: flip 2s;
+}
+
+.flip-leave-active {
+  animation: flip 1s reverse;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(-80deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
