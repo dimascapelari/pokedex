@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row mt-2">
-      <!-- início lado esquerdo -->
+      <!-- Início lado esquerdo -->
       <div class="col mb-2">
         <div class="card palco">
           <div class="card-header"></div>
@@ -25,18 +25,18 @@
 
           <div class="card-footer">
             <nav class="nav nav-pills nav-fill">
-              <!-- menu de navegação -->
+              <!-- Menu de navegação -->
             </nav>
 
             <div class="detalhes">
-              <!-- exibe dados de acordo com o menu de navegação -->
+              <!-- Exibe dados de acordo com o menu de navegação -->
             </div>
           </div>
         </div>
       </div>
-      <!-- fim lado esquerdo -->
+      <!-- Fim lado esquerdo -->
 
-      <!-- início lado direito -->
+      <!-- Início lado direito -->
       <div class="col mb-2 pokedex">
         <div class="row">
           <div class="col">
@@ -64,7 +64,7 @@
 
         <div class="row">
           <div class="pokedex-catalogo">
-            <!-- início listagem dinâmica -->
+            <!-- Início listagem dinâmica -->
             <div class="cartao-pokemon bg-grama" @click="exibir = !exibir">
               <h1>1 Bulbasaur</h1>
               <span>grama</span>
@@ -72,11 +72,11 @@
                 <img src="@/assets/imgs/pokemons/001.png" />
               </div>
             </div>
-            <!-- fim listagem dinâmica -->
+            <!-- Fim listagem dinâmica -->
           </div>
         </div>
       </div>
-      <!-- fim lado direito -->
+      <!-- Fim lado direito -->
     </div>
   </div>
 </template>
