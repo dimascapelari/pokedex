@@ -108,11 +108,11 @@
 
 /* Flip Exemplo 2 */
 .flip-enter-active {
-  animation: flip 2s;
+  animation: flipCustomizado 2s;
 }
 
 .flip-leave-active {
-  animation: flip 1s reverse;
+  animation: flipCustomizado 2s reverse;
 }
 
 @keyframes flip {
@@ -121,5 +121,56 @@
   }
   to {
     transform: rotateY(0deg);
+  }
+}
+
+@keyframes flipCustomizado {
+  0% {
+    transform: rotateY(-80deg);
+  }
+  25% {
+    transform: rotateY(-75deg);
+  }
+  50% {
+    transform: rotateY(-25deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* animacao1 */
+.animacao1-enter-active,
+.animacao1-leave-active {
+  animation: animacao1 5s ease 0s infinite normal forwards;
+}
+
+@keyframes animacao1 {
+  0.0% {
+    transform: scale(1) translate(-100px, 0) skew(0deg);
+  }
+  39.9% {
+    transform: scale(1) translate(100px, 0) skew(-5deg);
+  }
+  45.3% {
+    transform: scale(1) translate(100px, -6px) skew(0deg);
+  }
+  5.1% {
+    transform: scale(1) translate(-100px, 0) skew(-12deg);
+  }
+  50.3% {
+    transform: scale(1) translate(100px, 0px) skew(0deg);
+  }
+  55.3% {
+    transform: scale(1) translate(100px, -10px) skew(0deg);
+  }
+  60.3% {
+    transform: scale(1) translate(100px, 0px) skew(5deg);
+  }
+  95.1% {
+    transform: scale(1) translate(-100px, 0) skew(12deg);
+  }
+  99.6% {
+    transform: scale(1) translate(-100px, 0) skew(0deg);
   }
 }

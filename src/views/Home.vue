@@ -10,7 +10,8 @@
             <div class="pokemon">
               <!-- <transition name="slide"> -->
               <!-- <transition name="zoom"> -->
-              <transition name="flip">
+              <!-- <transition name="flip"> -->
+              <transition name="animacao1">
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
 
