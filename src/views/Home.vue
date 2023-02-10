@@ -11,7 +11,8 @@
               <!-- <transition name="slide"> -->
               <!-- <transition name="zoom"> -->
               <!-- <transition name="flip"> -->
-              <transition name="animacao1">
+              <!-- <transition name="animacao1"> -->
+              <transition name="pulo">
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
 
