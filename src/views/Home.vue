@@ -14,13 +14,17 @@
               <!-- <transition name="animacao1"> -->
               <!-- <transition name="pulo" type="animation"> -->
               <!-- <transition name="pulo" :duration="{ enter: 2000, leave: 1000 }"> -->
-              <transition
+              <!-- <transition
                 enter-from-class="entrada-estado-inicial"
                 enter-active-class="transicao"
                 enter-to-class="entrada-estado-final"
                 leave-from-class="saida-estado-inicial"
                 leave-active-class="transicao"
                 leave-to-class="saida-estado-final"
+              > -->
+              <transition
+                enter-active-class="animate__animated animate__bounceIn"
+                leave-active-class="animate__animated animate__bounceOut"
               >
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
