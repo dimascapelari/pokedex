@@ -22,7 +22,7 @@
                 leave-active-class="transicao"
                 leave-to-class="saida-estado-final"
               > -->
-              <transition
+              <!-- <transition
                 @before-enter="antesDaEntrada"
                 @enter="duranteAEntrada"
                 @after-enter="aposAEntrada"
@@ -34,16 +34,30 @@
                 :duration="{ enter: 2000, leave: 1000 }"
                 enter-active-class="animate__animated animate__bounceIn"
                 leave-active-class="animate__animated animate__bounceOut"
+              > -->
+              <transition
+                @after-enter="exibirEvolucoesTransicao"
+                @before-leave="ocultarEvolucoesTransicao"
+                enter-active-class="animate__animated animate__bounceIn"
+                leave-active-class="animate__animated animate__bounceOut"
               >
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
 
               <div class="evolucoes">
                 <transition name="fade">
-                  <img src="@/assets/imgs/pokemons/003.png" v-if="exibir" />
+                  <!-- <img src="@/assets/imgs/pokemons/003.png" v-if="exibir" /> -->
+                  <img
+                    src="@/assets/imgs/pokemons/003.png"
+                    v-if="exibirEvolucoes"
+                  />
                 </transition>
                 <transition name="fade">
-                  <img src="@/assets/imgs/pokemons/002.png" v-if="exibir" />
+                  <!-- <img src="@/assets/imgs/pokemons/002.png" v-if="exibir" /> -->
+                  <img
+                    src="@/assets/imgs/pokemons/002.png"
+                    v-if="exibirEvolucoes"
+                  />
                 </transition>
               </div>
             </div>
@@ -115,9 +129,18 @@ export default {
   data() {
     return {
       exibir: false,
+      exibirEvolucoes: false,
     };
   },
   methods: {
+    exibirEvolucoesTransicao() {
+      this.exibirEvolucoes = true;
+    },
+
+    ocultarEvolucoesTransicao() {
+      this.exibirEvolucoes = false;
+    },
+
     antesDaEntrada(el) {
       console.log("Antes da entrada", el);
     },
