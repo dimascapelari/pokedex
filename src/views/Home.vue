@@ -31,6 +31,7 @@
                 @leave="duranteASaida"
                 @after-leave="aposASaida"
                 @leave-cancelled="quandoSaidaCancelada"
+                :duration="{ enter: 2000, leave: 1000 }"
                 enter-active-class="animate__animated animate__bounceIn"
                 leave-active-class="animate__animated animate__bounceOut"
               >
@@ -121,10 +122,11 @@ export default {
       console.log("Antes da entrada", el);
     },
 
-    duranteAEntrada(el, done) {
+    // duranteAEntrada(el, done) {
+    duranteAEntrada(el) {
       console.log("Durante a entrada", el);
 
-      done(); //indica a conclusão da transição (entrada)
+      //done(); //indica a conclusão da transição (entrada)
     },
 
     aposAEntrada(el) {
@@ -139,10 +141,11 @@ export default {
       console.log("Antes da saída", el);
     },
 
-    duranteASaida(el, done) {
+    // duranteASaida(el, done) {
+    duranteASaida(el) {
       console.log("Durante a saída", el);
 
-      done(); //indica a conclusão da transição (saída)
+      //done(); //indica a conclusão da transição (saída)
     },
 
     aposASaida(el) {
