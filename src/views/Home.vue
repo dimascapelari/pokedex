@@ -12,7 +12,7 @@
               <!-- <transition name="zoom"> -->
               <!-- <transition name="flip"> -->
               <!-- <transition name="animacao1"> -->
-              <transition name="pulo">
+              <transition name="pulo" type="animation">
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
 
