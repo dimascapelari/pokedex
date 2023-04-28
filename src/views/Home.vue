@@ -35,13 +35,17 @@
                 enter-active-class="animate__animated animate__bounceIn"
                 leave-active-class="animate__animated animate__bounceOut"
               > -->
+
               <transition
                 @after-enter="exibirEvolucoesTransicao"
                 @before-leave="ocultarEvolucoesTransicao"
                 enter-active-class="animate__animated animate__bounceIn"
                 leave-active-class="animate__animated animate__bounceOut"
               >
-                <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
+                <img
+                  :src="require(`@/assets/imgs/pokemons/${pokemon.imagem}`)"
+                  v-if="exibir"
+                />
               </transition>
 
               <div class="evolucoes">
@@ -109,7 +113,7 @@
               v-for="p in pokemons"
               :key="p.id"
               :class="`cartao-pokemon bg-${p.tipo}`"
-              @click="exibir = !exibir"
+              @click="analisarPokemon(p)"
             >
               <h1>{{ p.id }}{{ p.nome }}</h1>
               <span>{{ p.tipo }}</span>
@@ -135,6 +139,7 @@ export default {
     return {
       exibir: false,
       exibirEvolucoes: false,
+      pokemon: {},
       pokemons: [
         {
           id: 1,
@@ -266,6 +271,11 @@ export default {
     };
   },
   methods: {
+    analisarPokemon(p) {
+      this.pokemon = p;
+      this.exibir = !this.exibir;
+    },
+
     exibirEvolucoesTransicao() {
       this.exibirEvolucoes = true;
     },
