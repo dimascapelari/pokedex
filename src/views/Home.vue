@@ -23,6 +23,14 @@
                 leave-to-class="saida-estado-final"
               > -->
               <transition
+                @before-enter="antesDaEntrada"
+                @enter="duranteAEntrada"
+                @after-enter="aposAEntrada"
+                @enter-cancelled="quandoEntradaCancelada"
+                @before-leave="antesDaSaida"
+                @leave="duranteASaida"
+                @after-leave="aposASaida"
+                @leave-cancelled="quandoSaidaCancelada"
                 enter-active-class="animate__animated animate__bounceIn"
                 leave-active-class="animate__animated animate__bounceOut"
               >
@@ -107,6 +115,43 @@ export default {
     return {
       exibir: false,
     };
+  },
+  methods: {
+    antesDaEntrada(el) {
+      console.log("Antes da entrada", el);
+    },
+
+    duranteAEntrada(el, done) {
+      console.log("Durante a entrada", el);
+
+      done(); //indica a conclusão da transição (entrada)
+    },
+
+    aposAEntrada(el) {
+      console.log("Após a entrada", el);
+    },
+
+    quandoEntradaCancelada(el) {
+      console.log("Quando a entrada é cancelada", el);
+    },
+
+    antesDaSaida(el) {
+      console.log("Antes da saída", el);
+    },
+
+    duranteASaida(el, done) {
+      console.log("Durante a saída", el);
+
+      done(); //indica a conclusão da transição (saída)
+    },
+
+    aposASaida(el) {
+      console.log("Após a saída", el);
+    },
+
+    quandoSaidaCancelada(el) {
+      console.log("Quando a saída é cancelada", el);
+    },
   },
 };
 </script>
