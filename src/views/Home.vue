@@ -12,7 +12,8 @@
               <!-- <transition name="zoom"> -->
               <!-- <transition name="flip"> -->
               <!-- <transition name="animacao1"> -->
-              <transition name="pulo" type="animation">
+              <!-- <transition name="pulo" type="animation"> -->
+              <transition name="pulo" :duration="{ enter: 2000, leave: 1000 }">
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
 
