@@ -13,7 +13,15 @@
               <!-- <transition name="flip"> -->
               <!-- <transition name="animacao1"> -->
               <!-- <transition name="pulo" type="animation"> -->
-              <transition name="pulo" :duration="{ enter: 2000, leave: 1000 }">
+              <!-- <transition name="pulo" :duration="{ enter: 2000, leave: 1000 }"> -->
+              <transition
+                enter-from-class="entrada-estado-inicial"
+                enter-active-class="transicao"
+                enter-to-class="entrada-estado-final"
+                leave-from-class="saida-estado-inicial"
+                leave-active-class="transicao"
+                leave-to-class="saida-estado-final"
+              >
                 <img src="@/assets/imgs/pokemons/001.png" v-if="exibir" />
               </transition>
 
