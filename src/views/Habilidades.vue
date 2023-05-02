@@ -6,7 +6,8 @@
       <table class="table text-white">
         <tbody>
           <transition-group name="lista">
-            <tr v-for="(h, indice) in pokemon.habilidades" :key="h">
+            <!-- <tr v-for="(h, indice) in pokemon.habilidades" :key="h"> -->
+            <tr v-for="(h, indice) in habilidadesOrdenadas" :key="h">
               <td>{{ h }}</td>
               <td class="d-flex justify-content-end">
                 <button
@@ -54,6 +55,12 @@ export default {
     adicionarHabilidade() {
       this.$emit("adicionarHabilidade", this.habilidade);
       this.habilidade = "";
+    },
+  },
+  computed: {
+    habilidadesOrdenadas() {
+      let habilidades = this.pokemon.habilidades;
+      return habilidades.sort();
     },
   },
 };
