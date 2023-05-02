@@ -120,7 +120,7 @@
               <option value="" disabled>Ordenar Pokémon</option>
               <option value="1">Id crescente</option>
               <option value="2">Id decrescrente</option>
-              <option>De A - Z</option>
+              <option value="3">De A - Z</option>
             </select>
           </div>
 
@@ -205,6 +205,22 @@ export default {
             return 1;
           }
 
+          return 0;
+        });
+      }
+
+      //ordenação alfabética A - Z
+      if (valorNovo == 3) {
+        this.pokemons.sort((proximo, atual) => {
+          // 1 caso a ordem esteja correta
+          if (atual.nome < proximo.nome) {
+            return 1;
+          }
+          // -1 caso a ordem esteja errada (necessário inverter posições)
+          if (atual.nome > proximo.nome) {
+            return -1;
+          }
+          // 0 caso nenhuma ação seja necessária
           return 0;
         });
       }
