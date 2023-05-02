@@ -137,23 +137,25 @@
         <div class="row">
           <div class="pokedex-catalogo">
             <!-- Início listagem dinâmica -->
-            <div
-              v-for="p in pokemons"
-              :key="p.id"
-              :class="`cartao-pokemon bg-${p.tipo}`"
-              @click="analisarPokemon(p)"
-            >
-              <h1>{{ p.id }}{{ " " }}{{ p.nome }}</h1>
-              <span>{{ p.tipo }}</span>
-              <div class="cartao-pokemon-img">
-                <transition
-                  appear
-                  enter-active-class="animate__animated animate__fadeInDown"
-                >
-                  <img :src="require(`@/assets/imgs/pokemons/${p.imagem}`)" />
-                </transition>
+            <transition-group name="ordenacao">
+              <div
+                v-for="p in pokemons"
+                :key="p.id"
+                :class="`cartao-pokemon bg-${p.tipo}`"
+                @click="analisarPokemon(p)"
+              >
+                <h1>{{ p.id }}{{ " " }}{{ p.nome }}</h1>
+                <span>{{ p.tipo }}</span>
+                <div class="cartao-pokemon-img">
+                  <transition
+                    appear
+                    enter-active-class="animate__animated animate__fadeInDown"
+                  >
+                    <img :src="require(`@/assets/imgs/pokemons/${p.imagem}`)" />
+                  </transition>
+                </div>
               </div>
-            </div>
+            </transition-group>
             <!-- Fim listagem dinâmica -->
           </div>
         </div>
