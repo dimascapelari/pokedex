@@ -121,6 +121,7 @@
               <option value="1">Id crescente</option>
               <option value="2">Id decrescrente</option>
               <option value="3">De A - Z</option>
+              <option value="4">De Z - A (localeCompare)</option>
             </select>
           </div>
 
@@ -222,6 +223,25 @@ export default {
           }
           // 0 caso nenhuma ação seja necessária
           return 0;
+        });
+      }
+
+      // ordenação alfabética de Z - A (localeCompare)
+      if (valorNovo == 4) {
+        this.pokemons.sort((proximo, atual) => {
+          //-1 indica que a string de referência vem antes da string do parâmetro
+          // let resultado1 = atual.nome.localeCompare(proximo.nome);
+
+          //1 indica que a string de referência vem depois da string do parâmetro
+          // let resultado2 = proximo.nome.localeCompare(atual.nome);
+
+          //0 se os valores forem iguais
+
+          //ordenação decrescente
+          return atual.nome.localeCompare(proximo.nome);
+
+          // console.log("atual e o próximo", resultado1);
+          // console.log("próximo e o atual", resultado2);
         });
       }
     },
