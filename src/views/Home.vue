@@ -89,7 +89,11 @@
             <div class="detalhes">
               <!-- Exibe dados de acordo com o menu de navegação -->
               <!-- {{ pokemon }} -->
-              <router-view v-slot="{ Component }" :pokemon="pokemon">
+              <router-view
+                v-slot="{ Component }"
+                :pokemon="pokemon"
+                @adicionarHabilidade="adicionarHabilidade"
+              >
                 <transition
                   enter-active-class="animate__animated animate__zoomInDown"
                 >
@@ -251,6 +255,12 @@ export default {
 
     quandoSaidaCancelada(el) {
       console.log("Quando a saída é cancelada", el);
+    },
+
+    adicionarHabilidade(habilidade) {
+      if (this.pokemon.habilidades) {
+        this.pokemon.habilidades.push(habilidade);
+      }
     },
   },
 };
