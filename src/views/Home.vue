@@ -88,11 +88,13 @@
 
             <div class="detalhes">
               <!-- Exibe dados de acordo com o menu de navegação -->
-              <transition
-                enter-active-class="animate__animated animate__zoomInDown"
-              >
-                <router-view></router-view>
-              </transition>
+              <router-view v-slot="{ Component }">
+                <transition
+                  enter-active-class="animate__animated animate__zoomInDown"
+                >
+                  <component :is="Component" />
+                </transition>
+              </router-view>
             </div>
           </div>
         </div>
