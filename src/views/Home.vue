@@ -88,7 +88,8 @@
 
             <div class="detalhes">
               <!-- Exibe dados de acordo com o menu de navegação -->
-              <router-view v-slot="{ Component }">
+              <!-- {{ pokemon }} -->
+              <router-view v-slot="{ Component }" :pokemon="pokemon">
                 <transition
                   enter-active-class="animate__animated animate__zoomInDown"
                 >
