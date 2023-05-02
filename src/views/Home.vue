@@ -129,7 +129,15 @@
             <input
               type="text"
               class="form-control"
-              placeholder="Pesquisar pokémon"
+              placeholder="Pesquisar Pokémon na tecla enter"
+              v-model="nomePokemon"
+              @keyup.enter="filtrarPokemonsPorNome"
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Pesquisar Pokémon watch"
+              v-model="nomePokemon2"
             />
           </div>
         </div>
@@ -177,9 +185,21 @@ export default {
       pokemon: {},
       pokemons: [],
       ordenacao: "",
+      nomePokemon: "",
+      nomePokemon2: "",
     };
   },
   watch: {
+    nomePokemon2(valorNovo) {
+      fetch(`http://localhost:3000/pokemons?nome_like=${valorNovo}`) //sintaxe suportada pelo JsonServer
+        .then((resposta) => {
+          return resposta.json();
+        })
+        .then((data) => {
+          this.pokemons = data;
+        });
+    },
+
     ordenacao(valorNovo) {
       //método sort
       //return 1 para indicar que a ordem está correta
@@ -339,6 +359,16 @@ export default {
       if (this.pokemon.habilidades[indice]) {
         this.pokemon.habilidades.splice(indice, 1);
       }
+    },
+
+    filtrarPokemonsPorNome() {
+      fetch(`http://localhost:3000/pokemons?nome_like=${this.nomePokemon}`) //sintaxe suportada pelo JsonServer
+        .then((resposta) => {
+          return resposta.json();
+        })
+        .then((data) => {
+          this.pokemons = data;
+        });
     },
   },
 };
